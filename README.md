@@ -1,4 +1,4 @@
-# BASIC-ANDROID-_EX_01_Implementation of a Hello world Activity using all lifecycles methods using Android Studio.
+# Ex.No:1 Implementation of a Hello world Activity using all lifecycles methods using Android Studio.
 
 
 ## AIM:
@@ -7,6 +7,7 @@ To create Hello world Activity using all lifecycles methods to display messages 
 ## EQUIPMENTS REQUIRED:
 
 Android Studio(Min. required Artic Fox)
+
 
 ## ALGORITHM:
 
@@ -24,97 +25,137 @@ Step 6: Display message give in MainActivity file.
 
 Step 7: Save and run the application.
 
-## PROGRAM
-### DEVELOPED BY : NAGUL K
-### REGISTER NO: 212222230089
 
-### MainActivity.java:
-``` java
-package com.example.exp1;
 
-import androidx.appcompat.app.AppCompatActivity;
+## PROGRAM:
+ ```
+/*
+Program to implement a Hello world Activity using all lifecycles methods using Android Studio .
+Developed by: NAGUL K
+RegisterNumber:  212222230089
+*/
+```
+
+## MainActivity.java:
+
+```
+package com.nextstep.application;
+
+import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.Toast;
+import androidx.activity.EdgeToEdge;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText(getApplicationContext(), "onCreate Called", Toast.LENGTH_LONG).show();
+
+        // Your existing code can stay here
+
     }
 
-
+    @Override
     protected void onStart() {
         super.onStart();
-        Toast toast = Toast.makeText(getApplicationContext(), "onStart Called", Toast.LENGTH_LONG);
-        toast.show();
+        Toast.makeText(getApplicationContext(), "onStart Called", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Toast.makeText(getApplicationContext(), "onResume Called", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast.makeText(getApplicationContext(), "onPause Called", Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Toast.makeText(getApplicationContext(), "onStop Called", Toast.LENGTH_LONG).show();
     }
 
     @Override
     protected void onRestart() {
         super.onRestart();
-        Toast toast = Toast.makeText(getApplicationContext(), "onRestart Called", Toast.LENGTH_LONG);
-        toast.show();
+        Toast.makeText(getApplicationContext(), "onRestart Called", Toast.LENGTH_LONG).show();
     }
 
-    protected void onPause() {
-        super.onPause();
-        Toast toast = Toast.makeText(getApplicationContext(), "onPause Called", Toast.LENGTH_LONG);
-        toast.show();
-    }
-
-    protected void onResume() {
-        super.onResume();
-        Toast toast = Toast.makeText(getApplicationContext(), "onResume Called", Toast.LENGTH_LONG);
-        toast.show();
-    }
-
-    protected void onStop() {
-        super.onStop();
-        Toast toast = Toast.makeText(getApplicationContext(), "onStop Called", Toast.LENGTH_LONG);
-        toast.show();
-    }
-
+    @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast toast = Toast.makeText(getApplicationContext(), "onDestroy Called", Toast.LENGTH_LONG);
-        toast.show();
+        Toast.makeText(getApplicationContext(), "onDestroy Called", Toast.LENGTH_LONG).show();
     }
+
 }
 
 ```
-### Activity_Main.XML:
-``` java
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+## activitymain.xml:
+
+```
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  
+    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <!-- A simple TextView to display a message -->
     <TextView
+        android:id="@+id/main_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Hello, World!"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:paddingBottom="16dp"/>
 
-  </androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- A Button that the user can press -->
+    <Button
+        android:id="@+id/main_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Click"
+        android:onClick="one1"
+        android:layout_gravity="center_horizontal"/>
+
+   
+
+</LinearLayout>
+
 ```
+
+
 ## OUTPUT:
-![WhatsApp Image 2024-08-26 at 15 17 31_32e42bbd](https://github.com/user-attachments/assets/f33bafda-a9c2-47d6-b4c6-6d8458813e9c)
-![WhatsApp Image 2024-08-26 at 15 17 31_6ed4764a](https://github.com/user-attachments/assets/35b794de-0f0a-438c-8976-694441f656f3)
-![WhatsApp Image 2024-08-26 at 15 17 32_bc14369d](https://github.com/user-attachments/assets/632e715c-23c6-4a49-9ec9-36d4f286372f)
-![WhatsApp Image 2024-08-26 at 15 20 26_b07a1264](https://github.com/user-attachments/assets/a4059817-eb18-4a2a-91eb-47972860830f)
-![WhatsApp Image 2024-08-26 at 15 20 27_6a2506e2](https://github.com/user-attachments/assets/d60e73c5-f4b5-4f42-834d-a361d5ccfabb)
+
+![Screenshot 2024-08-28 215626](https://github.com/user-attachments/assets/531b2bea-362d-48f1-b164-ff1f81191329)
+
+![Screenshot 2024-08-28 215647](https://github.com/user-attachments/assets/282178c3-34fc-4407-9afc-a5c39ae127b0)
+
+![Screenshot 2024-08-28 215712](https://github.com/user-attachments/assets/8cbeb223-2568-45a6-876d-9cdcb3b435bf)
+
+![Screenshot 2024-08-28 215731](https://github.com/user-attachments/assets/34c339cc-6026-4e3f-9c26-b9a973caea83)
+
+![Screenshot 2024-08-28 215753](https://github.com/user-attachments/assets/b48d4d03-b480-44cc-960a-d334690d999d)
 
 
 ## RESULT:
 Thus a program to implement the various life cycles of an activity is written and successfully executed using Android Studio.
-
